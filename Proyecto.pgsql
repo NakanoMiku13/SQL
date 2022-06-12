@@ -99,8 +99,7 @@ create table EvaluacionClienteEmpleados(
 	foreign key (idEmpleado) references Empleado(id) on delete cascade on update cascade
 );
 $$;
-
-
+call CrearBD();
 --Crear producto
 create procedure CP(tP char(75),Pre int,Tam int,Formato char(15),Material char(15))
 language sql
@@ -165,7 +164,7 @@ language sql
 as $$
 	insert into EmpleadoContrataCliente values(idClie,idEmp,fecha);
 $$;
-select*from cliente
+
 --Empleado Evalua cliente
 create procedure EvEC(idEmp int,idClie int,Nota int)
 language sql
@@ -2305,421 +2304,36 @@ call EvEC(55,138,1);
 call EvEC(43,88,5);
 call EvEC(22,147,2);
 call EvEC(12,107,3);
-call EvEC(27,130,1);
-call EvEC(63,133,7);
-call EvEC(25,84,9);
-call EvEC(22,143,1);
-call EvEC(1,150,1);
-call EvEC(23,144,3);
-call EvEC(8,150,4);
-call EvEC(26,100,3);
-call EvEC(32,84,8);
-call EvEC(71,129,1);
-call EvEC(69,91,10);
-call EvEC(67,76,4);
-call EvEC(57,140,7);
-call EvEC(51,140,10);
-call EvEC(2,98,1);
-call EvEC(63,76,1);
-call EvEC(31,105,6);
-call EvEC(74,80,4);
-call EvEC(28,110,3);
-call EvEC(37,123,5);
-call EvEC(56,108,10);
-call EvEC(30,145,6);
-call EvEC(30,88,2);
-call EvEC(18,84,6);
-call EvEC(53,81,10);
-call EvEC(1,100,7);
-call EvEC(71,118,7);
-call EvEC(24,92,5);
-call EvEC(42,124,10);
-call EvEC(31,133,3);
-call EvEC(30,147,1);
-call EvEC(7,93,2);
-call EvEC(2,138,9);
-call EvEC(38,93,6);
-call EvEC(56,76,4);
-call EvEC(19,96,5);
-call EvEC(5,147,1);
-call EvEC(28,149,5);
-call EvEC(32,138,2);
-call EvEC(68,103,1);
-call EvEC(12,144,7);
-call EvEC(65,85,7);
-call EvEC(8,128,7);
-call EvEC(57,89,5);
-call EvEC(57,147,9);
-call EvEC(58,109,10);
-call EvEC(65,86,8);
-call EvEC(24,118,3);
-call EvEC(50,96,3);
-call EvEC(71,114,3);
-call EvEC(14,102,6);
-call EvEC(5,79,5);
-call EvEC(28,94,4);
-call EvEC(7,133,9);
-call EvEC(7,146,5);
-call EvEC(44,95,9);
-call EvEC(5,136,5);
-call EvEC(30,100,3);
-call EvEC(14,149,1);
-call EvEC(56,82,5);
-call EvEC(1,81,8);
-call EvEC(55,85,3);
-call EvEC(64,143,1);
-call EvEC(50,142,7);
-call EvEC(45,78,2);
-call EvEC(11,79,10);
-call EvEC(52,78,9);
-call EvEC(28,143,8);
-call EvEC(58,101,3);
-call EvEC(42,77,2);
-call EvEC(44,133,5);
-call EvEC(61,91,10);
-call EvEC(13,130,5);
-call EvEC(70,98,10);
-call EvEC(33,102,4);
-call EvEC(67,129,2);
-call EvEC(74,149,5);
-call EvEC(33,146,2);
-call EvEC(37,106,2);
-call EvEC(49,143,7);
-call EvEC(27,108,8);
-call EvEC(41,135,6);
-call EvEC(67,110,9);
-call EvEC(60,134,1);
-call EvEC(71,118,7);
-call EvEC(46,123,10);
-call EvEC(46,123,1);
-call EvEC(16,128,4);
-call EvEC(5,130,4);
-call EvEC(1,121,6);
-call EvEC(55,119,4);
-call EvEC(49,76,9);
-call EvEC(28,115,9);
-call EvEC(18,105,9);
-call EvEC(46,126,2);
-call EvEC(25,137,2);
-call EvEC(27,142,8);
-call EvEC(3,88,8);
-call EvEC(40,125,8);
-call EvEC(15,99,4);
-call EvEC(74,140,6);
-call EvEC(61,140,4);
-call EvEC(43,150,3);
-call EvEC(60,85,8);
-call EvEC(8,148,6);
-call EvEC(8,135,3);
-call EvEC(7,105,7);
-call EvEC(75,105,5);
-call EvEC(68,104,1);
-call EvEC(31,139,1);
-call EvEC(36,92,2);
-call EvEC(66,116,4);
-call EvEC(71,116,10);
-call EvEC(49,86,9);
-call EvEC(3,90,8);
-call EvEC(71,146,4);
-call EvEC(8,124,5);
-call EvEC(16,120,2);
-call EvEC(11,80,9);
-call EvEC(13,149,7);
-call EvEC(45,116,4);
-call EvEC(44,111,5);
-call EvEC(58,143,1);
-call EvEC(43,83,7);
-call EvEC(59,133,4);
-call EvEC(46,135,6);
-call EvEC(62,105,2);
-call EvEC(65,126,1);
-call EvEC(57,78,10);
-call EvEC(47,147,5);
-call EvEC(42,77,6);
-call EvEC(42,93,6);
-call EvEC(68,116,9);
-call EvEC(42,127,8);
-call EvEC(32,141,10);
-call EvEC(11,89,3);
-call EvEC(26,126,5);
-call EvEC(74,145,10);
-call EvEC(9,100,1);
-call EvEC(31,118,2);
-call EvEC(68,86,2);
-call EvEC(61,146,6);
-call EvEC(41,132,2);
-call EvEC(37,126,6);
-call EvEC(50,146,10);
-call EvEC(19,86,1);
-call EvEC(27,112,7);
-call EvEC(50,137,6);
-call EvEC(59,90,7);
-call EvEC(64,127,1);
-call EvEC(60,148,2);
-call EvEC(63,115,4);
-call EvEC(58,147,1);
-call EvEC(12,150,1);
-call EvEC(27,143,6);
-call EvEC(75,133,7);
-call EvEC(48,143,9);
-call EvEC(75,106,8);
-call EvEC(69,101,1);
-call EvEC(34,116,10);
-call EvEC(21,138,3);
-call EvEC(45,104,8);
-call EvEC(50,147,8);
-call EvEC(71,135,8);
-call EvEC(16,123,3);
-call EvEC(16,119,10);
-call EvEC(49,131,1);
-call EvEC(33,81,5);
-call EvEC(48,150,9);
-call EvEC(57,93,10);
-call EvEC(26,114,3);
-call EvEC(59,118,1);
-call EvEC(54,139,7);
-call EvEC(66,76,7);
-call EvEC(73,101,2);
-call EvEC(36,117,4);
-call EvEC(6,85,6);
-call EvEC(44,86,7);
-call EvEC(17,138,4);
-call EvEC(1,82,6);
-call EvEC(38,99,4);
-call EvEC(73,77,3);
-call EvEC(22,111,2);
-call EvEC(9,110,1);
-call EvEC(54,106,10);
-call EvEC(56,116,9);
-call EvEC(71,83,5);
-call EvEC(22,110,9);
-call EvEC(6,116,2);
-call EvEC(19,118,2);
-call EvEC(63,85,9);
-call EvEC(47,112,9);
-call EvEC(18,131,1);
-call EvEC(53,143,6);
-call EvEC(43,129,2);
-call EvEC(71,89,4);
-call EvEC(26,77,8);
-call EvEC(32,135,9);
-call EvEC(70,100,2);
-call EvEC(54,111,2);
-call EvEC(26,135,5);
-call EvEC(44,84,1);
-call EvEC(25,77,5);
-call EvEC(23,97,2);
-call EvEC(52,85,7);
-call EvEC(17,130,3);
-call EvEC(10,124,2);
-call EvEC(71,149,6);
-call EvEC(49,105,10);
-call EvEC(72,135,1);
-call EvEC(61,121,5);
-call EvEC(53,137,10);
-call EvEC(27,125,9);
-call EvEC(57,135,5);
-call EvEC(33,139,3);
-call EvEC(13,140,10);
-call EvEC(42,104,8);
-call EvEC(52,94,8);
-call EvEC(15,150,9);
-call EvEC(61,91,10);
-call EvEC(49,129,2);
-call EvEC(56,123,8);
-call EvEC(33,87,3);
-call EvEC(27,85,10);
-call EvEC(24,81,1);
-call EvEC(57,117,2);
-call EvEC(75,119,8);
-call EvEC(61,79,8);
-call EvEC(7,77,8);
-call EvEC(69,100,2);
-call EvEC(24,97,7);
-call EvEC(46,116,7);
-call EvEC(20,77,5);
-call EvEC(58,95,10);
-call EvEC(28,100,1);
-call EvEC(16,126,2);
-call EvEC(52,86,3);
-call EvEC(2,147,6);
-call EvEC(55,92,5);
-call EvEC(53,125,1);
-call EvEC(62,77,1);
-call EvEC(63,101,10);
-call EvEC(74,135,8);
-call EvEC(64,87,10);
-call EvEC(66,76,6);
-call EvEC(18,94,5);
-call EvEC(25,100,9);
-call EvEC(64,98,8);
-call EvEC(23,80,2);
-call EvEC(20,105,8);
-call EvEC(15,113,1);
-call EvEC(58,81,2);
-call EvEC(36,143,10);
-call EvEC(55,130,9);
-call EvEC(17,102,2);
-call EvEC(17,95,4);
-call EvEC(68,140,6);
-call EvEC(68,140,5);
-call EvEC(16,95,4);
-call EvEC(67,97,10);
-call EvEC(65,82,2);
-call EvEC(56,106,1);
-call EvEC(69,132,1);
-call EvEC(62,120,8);
-call EvEC(74,104,1);
-call EvEC(62,142,2);
-call EvEC(62,146,8);
-call EvEC(46,79,1);
-call EvEC(9,126,7);
-call EvEC(36,108,1);
-call EvEC(43,79,4);
-call EvEC(67,85,7);
-call EvEC(22,80,10);
-call EvEC(67,127,10);
-call EvEC(36,140,9);
-call EvEC(7,120,8);
-call EvEC(31,126,1);
-call EvEC(54,106,10);
-call EvEC(29,117,10);
-call EvEC(4,111,4);
-call EvEC(18,137,8);
-call EvEC(13,98,2);
-call EvEC(17,91,5);
-call EvEC(8,131,4);
-call EvEC(23,136,10);
-call EvEC(74,110,2);
-call EvEC(50,119,3);
-call EvEC(63,79,9);
-call EvEC(49,89,6);
-call EvEC(27,140,1);
-call EvEC(20,81,10);
-call EvEC(29,145,4);
-call EvEC(39,110,3);
-call EvEC(64,97,9);
-call EvEC(31,120,3);
-call EvEC(57,111,6);
-call EvEC(21,119,9);
-call EvEC(24,148,10);
-call EvEC(31,121,8);
-call EvEC(52,83,9);
-call EvEC(62,124,9);
-call EvEC(73,85,2);
-call EvEC(8,147,5);
-call EvEC(60,107,9);
-call EvEC(42,115,8);
-call EvEC(63,81,5);
-call EvEC(67,84,10);
-call EvEC(70,149,4);
-call EvEC(28,119,3);
-call EvEC(41,121,3);
-call EvEC(33,150,7);
-call EvEC(30,119,10);
-call EvEC(36,132,6);
-call EvEC(7,106,5);
-call EvEC(69,102,3);
-call EvEC(66,128,9);
-call EvEC(10,131,8);
-call EvEC(74,147,5);
-call EvEC(52,138,10);
-call EvEC(34,130,6);
-call EvEC(11,91,2);
-call EvEC(37,89,5);
-call EvEC(10,92,8);
-call EvEC(30,117,8);
-call EvEC(43,110,4);
-call EvEC(49,97,8);
-call EvEC(47,94,4);
-call EvEC(3,139,10);
-call EvEC(51,97,5);
-call EvEC(6,127,5);
-call EvEC(72,80,9);
-call EvEC(27,119,8);
-call EvEC(22,105,6);
-call EvEC(1,146,8);
-call EvEC(56,93,4);
-call EvEC(47,127,7);
-call EvEC(13,115,7);
-call EvEC(63,114,1);
-call EvEC(29,107,3);
-call EvEC(11,104,9);
-call EvEC(16,127,5);
-call EvEC(30,92,6);
-call EvEC(18,121,5);
-call EvEC(56,124,7);
-call EvEC(28,144,10);
-call EvEC(57,145,2);
-call EvEC(73,145,4);
-call EvEC(12,80,9);
-call EvEC(51,88,9);
-call EvEC(58,138,1);
-call EvEC(38,110,3);
-call EvEC(54,79,1);
-call EvEC(61,124,5);
-call EvEC(67,149,3);
-call EvEC(32,107,10);
-call EvEC(75,146,3);
-call EvEC(64,144,5);
-call EvEC(26,118,6);
-call EvEC(50,142,9);
-call EvEC(63,90,8);
-call EvEC(12,139,7);
-call EvEC(6,83,7);
-call EvEC(67,109,9);
-call EvEC(25,128,10);
-call EvEC(33,142,5);
-call EvEC(30,130,6);
-call EvEC(28,93,5);
-call EvEC(39,122,10);
-call EvEC(56,131,8);
-call EvEC(67,89,6);
-call EvEC(13,98,6);
-call EvEC(7,86,9);
-call EvEC(30,127,5);
-call EvEC(70,110,1);
-call EvEC(11,100,7);
-call EvEC(27,128,7);
-call EvEC(15,88,10);
-call EvEC(26,111,8);
-call EvEC(57,111,4);
-call EvEC(38,94,8);
-call EvEC(32,96,9);
-call EvEC(13,102,6);
-call EvEC(37,138,5);
-call EvEC(56,143,3);
-
 $$;
-drop procedure FillEvEmpClie
+
 create procedure FillContrato()
 language sql
 as $$
-call Contrato(62,1,'2/05/2022');
-call Contrato(66,2,'2/05/2022');
+call Contrato(78,1,'2/05/2022');
+call Contrato(76,2,'2/05/2022');
 call Contrato(117,3,'2/05/2022');
 call Contrato(113,4,'2/05/2022');
-call Contrato(173,5,'2/05/2022');
-call Contrato(209,6,'2/05/2022');
+call Contrato(143,5,'2/05/2022');
+call Contrato(109,6,'2/05/2022');
 call Contrato(79,7,'2/05/2022');
-call Contrato(174,8,'2/05/2022');
-call Contrato(214,9,'2/05/2022');
-call Contrato(160,10,'2/05/2022');
-call Contrato(160,11,'2/05/2022');
-call Contrato(74,12,'2/05/2022');
-call Contrato(1,13,'2/05/2022');
-call Contrato(20,14,'2/05/2022');
-call Contrato(13,15,'2/05/2022');
-call Contrato(51,16,'2/05/2022');
-call Contrato(52,17,'2/05/2022');
+call Contrato(104,8,'2/05/2022');
+call Contrato(114,9,'2/05/2022');
+call Contrato(150,10,'2/05/2022');
+call Contrato(149,11,'2/05/2022');
+call Contrato(77,12,'2/05/2022');
+call Contrato(103,13,'2/05/2022');
+call Contrato(120,14,'2/05/2022');
+call Contrato(99,15,'2/05/2022');
+call Contrato(81,16,'2/05/2022');
+call Contrato(92,17,'2/05/2022');
 call Contrato(142,18,'2/05/2022');
-call Contrato(57,19,'2/05/2022');
-call Contrato(51,20,'2/05/2022');
-call Contrato(52,21,'2/05/2022');
-call Contrato(2,22,'2/05/2022');
+call Contrato(88,19,'2/05/2022');
+call Contrato(111,20,'2/05/2022');
+call Contrato(125,21,'2/05/2022');
+call Contrato(145,22,'2/05/2022');
 call Contrato(126,23,'2/05/2022');
-call Contrato(10,24,'2/05/2022');
-call Contrato(176,25,'2/05/2022');
+call Contrato(127,24,'2/05/2022');
+call Contrato(146,25,'2/05/2022');
 $$;
 
 create procedure FillPromo()
@@ -3481,7 +3095,10 @@ call IP('Taha','Moreno','Diaz','m',52,'555555','a','c');
 call IP('Vincenzo','Fernandez','Gonzalez','m',54,'555555','a','c');
 call IP('Lier','Ruiz','Gomez','m',92,'555555','a','a');
 $$;
-call CrearBD();
+
+alter sequence Persona_id_seq restart with 1;
+alter sequence Producto_nSerie_seq restart with 1;
+
 call FillPersonas();
 call FillEmp();
 call FillClie();
@@ -3492,3 +3109,41 @@ call FillSer();
 call FillPromo();
 call FillContrato();
 call fillEvEmpClie();
+
+
+--Consultas
+--Selección
+--Se desea conocer a todas las personas registradas en la base de datos
+select * from Persona;
+
+--Proyección
+--Se desea conocer la edad de las personas registradas en la base de datos
+select nombre from Persona;
+
+--Proyección con selección
+--Se desea conocer el nombre de las personas mayores a 18 años
+select nombre from Persona
+where edad > 18;
+
+--Producto cartesiano con selección y proyección
+--Se desea conocer el nombre de todos los empleados
+select nombre from Empleado,Persona
+where persona.id = empleado.id;
+
+--Reunión
+--Se desea conocer a los clientes que tengan más de 3 compras
+select * from Persona join Cliente on Persona.id = Cliente.id
+where noCompras > 3;
+
+--Reunión natural
+--Se desea conocer el nombre, edad y numero de comrpas de los clientes
+select P.nombre, P.edad, C.nocompras from Persona P natural join Cliente C;
+
+--Reunión Externa Izquierda
+--Se desea conocer el nombre y nota de todos los clientes y si estos tienen una evaluación por parte de algún Empleado mostrarla
+select nombre, Evaluacion from EvaluacionEmpleadoCliente EC right join (Cliente C natural join Persona P) on C.id = EC.idCliente;
+
+--Reunión Externa Derecha
+--Se desea conocer la id del cliente, el nombre del cliente, la nota y el nombre del empleado que evaluó algún cliente, los clientes pueden ser o no evaluados, pero se necesitan todos
+select distinct (C.id),C.nombre,ECC.Evaluacion, ECC.nombre  from (select nombre, id from Persona natural join Cliente) C left join (EvaluacionEmpleadoCliente EC join (select nombre, id from Empleado natural join Persona) E on E.id = EC.idEmpleado) ECC on ECC.idCliente = C.id;
+
