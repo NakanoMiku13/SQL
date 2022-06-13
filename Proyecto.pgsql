@@ -3147,3 +3147,73 @@ select nombre, Evaluacion from EvaluacionEmpleadoCliente EC right join (Cliente 
 --Se desea conocer la id del cliente, el nombre del cliente, la nota y el nombre del empleado que evaluó algún cliente, los clientes pueden ser o no evaluados, pero se necesitan todos
 select distinct (C.id),C.nombre,ECC.Evaluacion, ECC.nombre  from (select nombre, id from Persona natural join Cliente) C left join (EvaluacionEmpleadoCliente EC join (select nombre, id from Empleado natural join Persona) E on E.id = EC.idEmpleado) ECC on ECC.idCliente = C.id;
 
+--Ordenamiento de tuplas
+--Se desea visualizar el menor al mayor salario de los empleados
+select salario from Empleado
+order by salario;
+
+--Contar
+--Cuántos empleados hay en la bd
+select count(id) from Empleado;
+
+--Agrupación
+--Cuántas personas hay con el mismo nombre registradas en la BD?
+select nombre, count(nombre) from Persona
+group by nombre;
+
+--Maximo
+--Cuál es el salario máximo en los empleados
+select max(salario) from Empleado;
+
+--Mínimo
+--Cuál es el salario mínimo en los empleados
+select min(nocompras) from Cliente;
+
+--Promedio
+--Cuál es el promedio de compras de los clientes.
+select avg(nocompras) from Cliente;
+
+--Suma
+--Cuál es la suma de los salario de los empleados
+select sum(salario) from Empleado;
+
+--Having
+--Se desea conocer el nombre si existen más de 2 personas con el mismo nombre y cuántos hay con el mismo nombre
+select count(nombre),nombre
+from Persona
+group by nombre
+having count(nombre)>2;
+
+--Operador IN
+--Se desea conocer a las personas que son clientes
+select nombre from Persona
+where nombre in (select nombre from Persona natural join Cliente);
+
+--Operador NOT IN
+--Se desea conocer a las personas que no son clientes
+select nombre from Persona
+where nombre not in (select nombre from Persona natural join Cliente);
+
+--Exists
+--Verificar si alguna persona es una Empleada
+select id from Persona
+where exists (select id from Empleado);
+
+--not exists
+--Verificar si hay personas que no son empleados
+select * from Persona
+where not exists (select * from Empleado);
+
+
+--Bloque de transacción
+begin transaction;
+alter table Persona add Temporal int;
+select * from Persona;
+rollback;
+select * from Persona;
+alter table Persona add Temporal int;
+commit;
+select * from Persona;
+alter table Persona drop Temporal;
+commit;
+select * from Persona;
